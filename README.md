@@ -1,8 +1,11 @@
 # videochat
 > This is simple video chat application with Vue.js + TypeScript.
 
+## ScreenShot
+[Imgur](https://i.imgur.com/DJcelGV.png)
+
 ## Prepare
-Create SkyWay API.
+Create SkyWay API.<br>
 [SkyWay](https://webrtc.ecl.ntt.com/)
 
 Please set SkyWay API key. <br>
