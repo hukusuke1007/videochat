@@ -111,7 +111,6 @@ export default class VideoChat extends Vue {
   }
 
   private mounted() {
-    console.log('hello', process.env.SKYWAY_API_KEY)
     this.peer = new Peer({
       key: process.env.SKYWAY_API_KEY,
       debug: 0,

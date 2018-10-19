@@ -8,15 +8,15 @@ self.__precacheManifest = [
     "url": "/videochat/js/chunk-vendors.502a4982.js"
   },
   {
-    "revision": "c89fd2594a31d30ade61",
-    "url": "/videochat/js/app.bc6fb3e6.js"
+    "revision": "59d859d0ec20a913b499",
+    "url": "/videochat/js/app.71605adb.js"
   },
   {
-    "revision": "f80636dcd4dbbdbb492a0fdf4936b435",
+    "revision": "1f1d720882d333b2b875e12402cdf7dd",
     "url": "/videochat/index.html"
   },
   {
-    "revision": "c89fd2594a31d30ade61",
-    "url": "/videochat/css/app.9469f746.css"
+    "revision": "59d859d0ec20a913b499",
+    "url": "/videochat/css/app.3ec94ea4.css"
   }
 ];
