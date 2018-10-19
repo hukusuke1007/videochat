@@ -75,12 +75,12 @@
     <v-dialog v-model="dialog" persistent max-width="300px">
       <v-card>
         <v-card-title v-if="call">
-          <span class="headline">Calling from {{ call.remoteId }}</span>
+          <span class="headline">着信 {{ call.remoteId }}</span>
         </v-card-title>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="success" @click="connect">Connect</v-btn>
-          <v-btn color="error" @click="disconnect">Disconnect</v-btn>
+          <v-btn color="success" @click="connect">通話する</v-btn>
+          <v-btn color="error" @click="disconnect">切断</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -105,7 +105,7 @@ export default class VideoChat extends Vue {
   private callId: string = ''
   private call: any = null
   private connectingCall: any = null
-
+  private videoCodec: string = 'H264'
   get computedCallEnable() {
     return (!this.callId || this.connectingCall) ? true : false
   }
@@ -184,14 +184,14 @@ export default class VideoChat extends Vue {
   }
 
   private onCall() {
-    const call = this.peer.call(this.callId, this.localStream, { videoCodec: 'VP8' })
+    const call = this.peer.call(this.callId, this.localStream, { videoCodec: this.videoCodec })
     this.receive(call)
   }
 
   private connect() {
     this.dialog = false
     this.call.answer(this.localStream, {
-      videoCodec: 'VP8',
+      videoCodec: this.videoCodec,
     })
     this.receive(this.call)
     // this.call = null

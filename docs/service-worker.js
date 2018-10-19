@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.2/workbox-sw.js");
 
 importScripts(
-  "/videochat/precache-manifest.841730eb5a1b5701d93b6cdd41133f51.js"
+  "/videochat/precache-manifest.d4e5e52d839fca9d7cdcd0b608bd4608.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "videochat"});
