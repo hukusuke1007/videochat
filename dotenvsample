@@ -1,0 +1,3 @@
+# Please set SkyWay your API key.
+# And rename file name 'dotenvsample' => '.env' 
+SKYWAY_API_KEY = ''
