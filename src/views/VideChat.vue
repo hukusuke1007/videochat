@@ -39,6 +39,13 @@
                 class="video"
               />
             </v-card-media>
+            <v-slider
+              v-model="volume"
+              min="0"
+              max="100"
+              thumb-label
+              append-icon="volume_up"
+              prepend-icon="volume_down"/>
           </v-flex>
           <v-flex>
             <v-card-media>
@@ -88,7 +95,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Vue, Watch } from 'vue-property-decorator';
 import Peer from 'skyway-js'
 
 @Component
@@ -106,8 +113,18 @@ export default class VideoChat extends Vue {
   private call: any = null
   private connectingCall: any = null
   private videoCodec: string = 'H264'
+  private volume: number = 30
+
   get computedCallEnable() {
     return (!this.callId || this.connectingCall) ? true : false
+  }
+
+  @Watch('volume')
+  private onValueChange(newValue: number, oldValue: number): void {
+    console.log(`watch: ${newValue}, ${oldValue}`)
+    const element: HTMLMediaElement = document.getElementById('other_video') as HTMLMediaElement
+    element.volume = newValue / 100
+    console.log(element.volume)
   }
 
   private mounted() {
@@ -208,6 +225,7 @@ export default class VideoChat extends Vue {
     call.on('stream', (stream: any) => {
       const element: HTMLMediaElement = document.getElementById('other_video') as HTMLMediaElement
       element.srcObject = stream
+      element.volume = 0.3
       element.play()
     })
     this.connectingCall = call
