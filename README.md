@@ -2,7 +2,7 @@
 > This is simple video chat application with Vue.js + TypeScript.
 
 ## ScreenShot
-[Imgur](https://i.imgur.com/DJcelGV.png)
+<a href="https://imgur.com/DJcelGV"><img src="https://i.imgur.com/DJcelGV.png" height="50%" width="50%" /></a>
 
 ## Prepare
 Create SkyWay API.<br>
